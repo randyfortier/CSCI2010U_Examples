@@ -1,0 +1,14 @@
+// show balance of each node
+8, 4, 12, 2, 6, 10, 3
+
+// single rotation right
+1, 2, 3
+
+// single rotation left
+3, 2, 1
+
+// double rotation right
+2, 1, 6, 7, 4, 3, 5
+
+// double rotation left:
+6, 7, 2, 1, 4, 3, 5

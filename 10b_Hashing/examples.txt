@@ -1,0 +1,7 @@
+- data:  (2, A), (6, C), (8, E), (2, E), (4, B), (8, A), (6, B), (1, E), (2, A)
+
+- chaining
+- linear probing
+   - how to handle deletions?
+- briefly describe quadratic probing
+- double hashing (secondary hash function)

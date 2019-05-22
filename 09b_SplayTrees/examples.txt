@@ -1,0 +1,69 @@
+Start with the following tree:
+
+      31
+         29
+   24
+         22
+      21
+         19
+17
+   11
+
+
+               17
+      11                   24
+                     21          31
+                  19    22     29
+
+- find 31
+   - splay the 31
+      - zig-zig it to the top
+
+                           31
+               24
+       17           29
+   11        21
+           19  22
+
+- delete 22
+   - delete the 22
+   - splay the 21
+      - zig-zag it up two levels
+
+                           31
+            21
+   17             24
+11    19       22    29
+
+      - zig it up one more level
+
+                  21
+         17                31
+      11    19        24
+                    22  29
+
+- insert 8
+   - insert the 8 (left child of the 11)
+
+                  21
+         17                31
+      11    19        24
+    8               22  29
+
+   - splay the 8
+      - zig-zig the 8 up two levels
+
+                  21
+   8                                31
+      11                        24
+         17                   22  29
+            19
+
+      - zig the 8 up one last level
+
+      8
+                  21
+         11                 31
+            17          24
+               19     22  29
+         

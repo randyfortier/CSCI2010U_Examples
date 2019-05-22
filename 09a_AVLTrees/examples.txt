@@ -1,14 +1,16 @@
-// show balance of each node
+In this lecture, we're going to go over the following examples (on the board):
+
+Show balance of each node
 8, 4, 12, 2, 6, 10, 3
 
-// single rotation right
+Single rotation right
 1, 2, 3
 
-// single rotation left
+Single rotation left
 3, 2, 1
 
-// double rotation right
+Double rotation right
 2, 1, 6, 7, 4, 3, 5
 
-// double rotation left:
+Double rotation left:
 6, 7, 2, 1, 4, 3, 5

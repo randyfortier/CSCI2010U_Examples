@@ -60,29 +60,7 @@ public class Graph {
       return vertices.get(name);
    }
 
-   public Set<Vertex> discovered;
-   public Map<Vertex,Edge> edges;
-
-   public void dfs(String startingVertexName) {
-      Vertex startingVertex = vertices.get(startingVertexName);
-
-      discovered = new HashSet<>();
-      edges = new HashMap<>();
-
-      dfs(startingVertex);
-   }
-
-   private void dfs(Vertex vert) {
-      discovered.add(vert);
-
-      List<Vertex> adjacencies = vert.getAdjacencies();
-      for (Vertex v: adjacencies) {
-         if (!discovered.contains(v)) {
-            edges.put(v, new Edge(v, vert));
-            dfs(v);
-         }
-      }
-   }
+   // implement DFS
 
    public static void main(String[] args) {
       Graph graph = new Graph();
@@ -100,31 +78,6 @@ public class Graph {
       graph.addEdge("B", "E");
       graph.addEdge("D", "E");
 
-      Vertex d = graph.getVertex("D");
-      System.out.println("degree of D: " + d.getDegree());
-      List<Vertex> adjacencies = d.getAdjacencies();
-      System.out.println("Adjacencies of D: ");
-      for (Vertex v: adjacencies) {
-         System.out.print("\t" + v.getName() + ", adjacencies: ");
-
-         for (Vertex a: v.getAdjacencies()) {
-            System.out.print("\t\t" + a.getName() + " ");
-         }
-         System.out.println("");
-      }
-
       // test DFS
-      graph.dfs("E");
-
-      System.out.println("Discovered vertices: ");
-      for (Vertex v: graph.discovered) {
-         System.out.println("\t" + v.getName());
-      }
-
-      System.out.println("Discovered edges: ");
-      for (Vertex v: graph.edges.keySet()) {
-         Edge e = graph.edges.get(v);
-         System.out.println("\t(" + e.getVertex1().getName() + ", " + e.getVertex2().getName() + ")");
-      }
    }
 }

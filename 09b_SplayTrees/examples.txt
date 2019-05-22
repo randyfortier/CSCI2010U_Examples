@@ -1,3 +1,5 @@
+In this lecture, we're going to go over the following examples (on the board):
+
 Start with the following tree:
 
       31
@@ -66,4 +68,3 @@ Start with the following tree:
          11                 31
             17          24
                19     22  29
-         

@@ -1,3 +1,5 @@
+In this lecture, we're going to go over the following examples (on the board):
+
 - data:  (2, A), (6, C), (8, E), (2, E), (4, B), (8, A), (6, B), (1, E), (2, A)
 
 - chaining

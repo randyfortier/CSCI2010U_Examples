@@ -1,3 +1,5 @@
+In this lecture, we're going to go over the following examples (on the board):
+
 Bucket sort:
 4,3,7,4,2,7,4,2,1
 

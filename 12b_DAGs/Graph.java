@@ -5,7 +5,7 @@ public class Graph {
    private class Vertex {
       private String name;
       private List<Vertex> adjacencies;
-      private int label = -1;
+      // add extra fields
 
       public Vertex(String name) {
          this.name = name;
@@ -28,8 +28,7 @@ public class Graph {
          return adjacencies.size();
       }
 
-      public int getLabel() { return label; }
-      public void setLabel(int newLabel) { this.label = newLabel; }
+      // accessor for new fields
    }
 
    private HashMap<String, Vertex> vertices;
@@ -54,46 +53,13 @@ public class Graph {
 
    public HashMap<String, Vertex> getVertices() { return vertices; }
 
-   public void removeEdgesIntoVertex(Vertex endVertex) {
-      Set<String> vertexNames = this.vertices.keySet();
-      for (String key: vertexNames) {
-         Vertex v = this.vertices.get(key);
-         v.removeAdjacency(endVertex);
-      }
-   }
+   // add new method
 
    public Vertex getVertex(String name) {
       return vertices.get(name);
    }
 
-   public void topologicalSort() {
-      Set<String> vertexNames = this.vertices.keySet();
-
-      // for quick access
-      List<Vertex> vertices = new ArrayList<>();
-      for (String key: vertexNames) {
-         vertices.add(this.vertices.get(key));
-      }
-
-      while (vertices.size() > 0) {
-         // find a vertex with no outgoing edges
-         Vertex nextVertex = null;
-         for (Vertex v: vertices) {
-            if (v.getDegree() == 0) {
-               nextVertex = v;
-            }
-         }
-
-         if (nextVertex != null) {
-            nextVertex.setLabel(vertices.size());
-            vertices.remove(nextVertex);
-            this.removeEdgesIntoVertex(nextVertex);
-         } else {
-            System.out.println("No vertices with degree zero found.");
-            return;
-         }
-      }
-   }
+   // topological sort
 
    public static void main(String[] args) {
       Graph graph = new Graph();
@@ -112,22 +78,5 @@ public class Graph {
       graph.addEdge("D", "E");
 
       // test topological sorting
-      graph.topologicalSort();
-
-      // for quick access
-      Set<String> vertexNames = graph.vertices.keySet();
-      List<Vertex> vertices = new ArrayList<>();
-      for (String key: vertexNames) {
-         vertices.add(graph.vertices.get(key));
-      }
-
-      // output the sorted vertices, in order
-      for (int i = 1; i <= vertexNames.size(); i++) {
-         for (Vertex v: vertices) {
-            if (v.getLabel() == i) {
-               System.out.print(v.getName() + " ");
-            }
-         }
-      }
    }
 }

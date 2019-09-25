@@ -52,7 +52,10 @@ public class LinkedList {
 
     public void removeEnd() {
         // handle the empty list special case
-        // TODO
+        if (size == 0) {
+            // can't return an element that doesn't exist!
+            return; 
+        }
 
         size--;
 
@@ -82,6 +85,8 @@ public class LinkedList {
         list.insertEnd("Paolo");
         list.print();
         list.insertEnd("Carla");
+        list.print();
+        list.removeEnd();
         list.print();
     }
 }

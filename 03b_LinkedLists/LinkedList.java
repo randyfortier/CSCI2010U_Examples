@@ -50,6 +50,19 @@ public class LinkedList {
         current.next = newNode;
     }
 
+    public void insertStart(String newValue) {
+        // create a new node for our value
+        Node newNode = new Node();
+        newNode.value = newValue;
+        newNode.next = head;
+
+        // increase the size
+        size++;
+
+        // add the element
+        head = newNode;
+    }
+
     public void removeEnd() {
         // handle the empty list special case
         if (size == 0) {
@@ -77,6 +90,18 @@ public class LinkedList {
         previous.next = null;
     }
 
+    public void removeStart() {
+        // handle the empty list special case
+        if (size == 0) {
+            // can't return an element that doesn't exist!
+            return; 
+        }
+
+        size--;
+
+        head = head.next;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.print();
@@ -84,9 +109,11 @@ public class LinkedList {
         list.print();
         list.insertEnd("Paolo");
         list.print();
-        list.insertEnd("Carla");
+        list.insertStart("Carla");
         list.print();
         list.removeEnd();
+        list.print();
+        list.removeStart();
         list.print();
     }
 }

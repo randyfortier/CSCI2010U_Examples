@@ -22,7 +22,7 @@ public class Matrix {
         // make sure the matrices are compatible
         if (this.numCols != other.numRows) {
             // not compatible
-            throw new IllegalArgumentException("Cannot multiply a "+this.getNumRows()+"x"+this.getNumCols()+" matrix with a "+other.getNumRows()+"x"+other.getNumCols()+" matrix");
+            throw new IllegalArgumentException("Cannot multiply a "+this.numRows+"x"+this.numCols+" matrix with a "+other.numRows+"x"+other.numCols+" matrix");
         }
 
         // create a new matrix for the result
@@ -40,6 +40,15 @@ public class Matrix {
         }
 
         return result;
+    }
+
+    public void print() {
+        for (int r = 0; r < this.numRows; r++) {
+            for (int c = 0; c < this.numCols; c++) {
+                System.out.print(this.get(r, c) + " ");
+            }
+            System.out.println("");
+        }
     }
     public static void main(String[] args) {
         Matrix a = new Matrix(2, 3);

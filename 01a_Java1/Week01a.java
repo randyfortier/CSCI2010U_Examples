@@ -1,4 +1,3 @@
-
 /**
  * Week01a
  *
@@ -22,6 +21,7 @@ public class Week01a {
          System.out.println("Age: " + age);
 
          int age = 44;
+
          System.out.println("Age: " + age);
          System.out.println("Age: " + Week01a.age);
 

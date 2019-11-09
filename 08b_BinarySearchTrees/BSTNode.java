@@ -28,4 +28,32 @@ public class BSTNode {
         }
     }
     
+    public void print(int depth) {
+        if (this.right != null) {
+          this.right.print(depth + 1);
+        }
+    
+        for (int i = 0; i < depth; i++) {
+          System.out.print("\t");
+        }
+        System.out.println(this.value);
+    
+        if (this.left != null) {
+          this.left.print(depth + 1);
+        }
+    }
+    
+    public int getHeight() {
+        int leftHeight = 1;
+        if (left != null) {
+          leftHeight = left.getHeight() + 1;
+        }
+    
+        int rightHeight = 0;
+        if (right != null) {
+          rightHeight = right.getHeight() + 1;
+        }
+    
+        return (leftHeight > rightHeight) ? leftHeight : rightHeight;
+    }
 }
